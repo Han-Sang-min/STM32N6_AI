@@ -1,5 +1,5 @@
-![예시 이미지](attachment:15904992-1b32-4f87-a09d-fd9f989459a4:image.png)
 
+![image](https://github.com/user-attachments/assets/a205e8b9-c64d-41b8-8a27-fb58e5840302)
 예시 이미지
 
 # 🛠️ 개발 환경
