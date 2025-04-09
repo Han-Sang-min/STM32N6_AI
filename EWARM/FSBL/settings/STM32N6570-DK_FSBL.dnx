@@ -1,0 +1,204 @@
+<?xml version="1.0"?>
+<settings>
+    <TerminalIO>
+        <InputSource>1</InputSource>
+        <InputMode2>10</InputMode2>
+        <Filename>$PROJ_DIR$\TermIOInput.txt</Filename>
+        <InputEcho>1</InputEcho>
+        <ShowReset>0</ShowReset>
+        <InputEncodingICU>0</InputEncodingICU>
+        <OutputEncodingICU>0</OutputEncodingICU>
+    </TerminalIO>
+    <Stack>
+        <FillEnabled>0</FillEnabled>
+        <OverflowWarningsEnabled>1</OverflowWarningsEnabled>
+        <WarningThreshold>90</WarningThreshold>
+        <SpWarningsEnabled>1</SpWarningsEnabled>
+        <WarnLogOnly>1</WarnLogOnly>
+        <UseTrigger>1</UseTrigger>
+        <TriggerName>main</TriggerName>
+        <LimitSize>0</LimitSize>
+        <ByteLimit>50</ByteLimit>
+    </Stack>
+    <PlDriver>
+        <FirstRun>0</FirstRun>
+        <MemConfigValue>C:\iar\ewarm-9.60.3\arm\config\debugger\ST\STM32N6570-DK.ddf</MemConfigValue>
+    </PlDriver>
+    <StLinkDriver>
+        <stlinkserialNo>0047004C3433511930343835</stlinkserialNo>
+        <stlinkfoundProbes />
+        <stlinkResetStyle>1</stlinkResetStyle>
+        <stlinkResetStrategy>1</stlinkResetStrategy>
+        <LeaveTargetRunning>_ 0</LeaveTargetRunning>
+        <CStepIntDis>_ 0</CStepIntDis>
+    </StLinkDriver>
+    <ArmDriver>
+        <EnableCache>0</EnableCache>
+        <EnforceMemoryConfiguration>1</EnforceMemoryConfiguration>
+    </ArmDriver>
+    <DebugChecksum>
+        <Checksum>3775283737</Checksum>
+    </DebugChecksum>
+    <Disassembly>
+        <MixedMode>1</MixedMode>
+        <InstrCount>0</InstrCount>
+    </Disassembly>
+    <Trace1>
+        <Enabled>0</Enabled>
+        <ShowSource>1</ShowSource>
+    </Trace1>
+    <CallStack>
+        <ShowArgs>0</ShowArgs>
+    </CallStack>
+    <Exceptions>
+        <StopOnUncaught>_ 0</StopOnUncaught>
+        <StopOnThrow>_ 0</StopOnThrow>
+    </Exceptions>
+    <SWOTraceHWSettings>
+        <OverrideDefaultClocks>0</OverrideDefaultClocks>
+        <CpuClock>75000000</CpuClock>
+        <ClockAutoDetect>0</ClockAutoDetect>
+        <ClockWanted>500000</ClockWanted>
+        <JtagSpeed>500000</JtagSpeed>
+        <Prescaler>150</Prescaler>
+        <TimeStampPrescIndex>0</TimeStampPrescIndex>
+        <TimeStampPrescData>0</TimeStampPrescData>
+        <PcSampCYCTAP>1</PcSampCYCTAP>
+        <PcSampPOSTCNT>15</PcSampPOSTCNT>
+        <PcSampIndex>0</PcSampIndex>
+        <DataLogMode>0</DataLogMode>
+        <ITMportsEnable>0</ITMportsEnable>
+        <ITMportsTermIO>0</ITMportsTermIO>
+        <ITMportsLogFile>0</ITMportsLogFile>
+        <ITMlogFile>$PROJ_DIR$\ITM.log</ITMlogFile>
+    </SWOTraceHWSettings>
+    <PlDdfRanges>
+        <ConfigRanges0>Memory ITCM_RAM 0 262144 0</ConfigRanges0>
+        <ConfigRanges1>Memory ITCM_RAM_NSC 268435456 262144 0</ConfigRanges1>
+        <ConfigRanges2>Memory ROM 134217728 131072 1</ConfigRanges2>
+        <ConfigRanges3>Memory ROM_NSC 402653184 131072 1</ConfigRanges3>
+        <ConfigRanges4>Memory DTCM_RAM 536870912 131072 0</ConfigRanges4>
+        <ConfigRanges5>Memory DTCM_RAM_NSC 805306368 131072 0</ConfigRanges5>
+        <ConfigRanges6>Memory DTCM_RAM_FLEX 537001984 131072 0</ConfigRanges6>
+        <ConfigRanges7>Memory DTCM_RAM_FLEX_NSC 805437440 131072 0</ConfigRanges7>
+        <ConfigRanges8>Memory SRAM1_AXI 603979776 1048576 0</ConfigRanges8>
+        <ConfigRanges9>Memory SRAM1_AXI_NSC 872415232 1048576 0</ConfigRanges9>
+        <ConfigRanges10>Memory SRAM2_AXI 605028352 1048576 0</ConfigRanges10>
+        <ConfigRanges11>Memory SRAM2_AXI_NSC 873463808 1048576 0</ConfigRanges11>
+        <ConfigRanges12>Memory SRAM3_AXI 606076928 458752 0</ConfigRanges12>
+        <ConfigRanges13>Memory SRAM3_AXI_NSC 874512384 458752 0</ConfigRanges13>
+        <ConfigRanges14>Memory SRAM4_AXI 606535680 458752 0</ConfigRanges14>
+        <ConfigRanges15>Memory SRAM4_AXI_NSC 874971136 458752 0</ConfigRanges15>
+        <ConfigRanges16>Memory SRAM5_AXI 606994432 458752 0</ConfigRanges16>
+        <ConfigRanges17>Memory SRAM5_AXI_NSC 875429888 458752 0</ConfigRanges17>
+        <ConfigRanges18>Memory SRAM6_AXI 607453184 458752 0</ConfigRanges18>
+        <ConfigRanges19>Memory SRAM6_AXI_NSC 875888640 458752 0</ConfigRanges19>
+        <ConfigRanges20>Memory CACHE_AXI 607911936 262144 0</ConfigRanges20>
+        <ConfigRanges21>Memory CACHE_AXI_NSC 876347392 262144 0</ConfigRanges21>
+        <ConfigRanges22>Memory VENCRAM_AXI 608174080 131072 0</ConfigRanges22>
+        <ConfigRanges23>Memory VENCRAM_AXI_NSC 876609536 131072 0</ConfigRanges23>
+        <ConfigRanges24>Memory GFXMMU_RAM 620756992 16777216 0</ConfigRanges24>
+        <ConfigRanges25>Memory GFXMMU_RAM_NSC 889192448 16777216 0</ConfigRanges25>
+        <ConfigRanges26>Memory FMC_NAND 670035968 4096 0</ConfigRanges26>
+        <ConfigRanges27>Memory FMC_NAND_NSC 938471424 4096 0</ConfigRanges27>
+        <ConfigRanges28>Memory STM_channels 670040064 1048576 0</ConfigRanges28>
+        <ConfigRanges29>Memory STM_channels_NSC 938475520 1048576 0</ConfigRanges29>
+        <ConfigRanges30>Memory RAM1_AHB 671088640 16384 0</ConfigRanges30>
+        <ConfigRanges31>Memory RAM1_AHB_NSC 939524096 16384 0</ConfigRanges31>
+        <ConfigRanges32>Memory RAM2_AHB 671105024 16384 0</ConfigRanges32>
+        <ConfigRanges33>Memory RAM2_AHB_NSC 939540480 16384 0</ConfigRanges33>
+        <ConfigRanges34>Memory RAM_Backup 738197504 8192 0</ConfigRanges34>
+        <ConfigRanges35>Memory RAM_Backup_NSC 1006632960 8192 0</ConfigRanges35>
+        <ConfigRanges36>Memory PeriphAPB1 1073741824 65536 2</ConfigRanges36>
+        <ConfigRanges37>Memory PeriphAPB1_NSC 1342177280 65536 2</ConfigRanges37>
+        <ConfigRanges38>Memory PeriphAHB1 1073872896 1474560 2</ConfigRanges38>
+        <ConfigRanges39>Memory PeriphAHB1_NSC 1342308352 1474560 2</ConfigRanges39>
+        <ConfigRanges40>Memory PeriphAPB2 1107296256 65536 2</ConfigRanges40>
+        <ConfigRanges41>Memory PeriphAPB2_NSC 1375731712 65536 2</ConfigRanges41>
+        <ConfigRanges42>Memory PeriphAHB2 1107427328 131072 2</ConfigRanges42>
+        <ConfigRanges43>Memory PeriphAHB2_NSC 1375862784 131072 2</ConfigRanges43>
+        <ConfigRanges44>Memory PeriphAPB3 1140850688 65536 2</ConfigRanges44>
+        <ConfigRanges45>Memory PeriphAPB3_NSC 1409286144 65536 2</ConfigRanges45>
+        <ConfigRanges46>Memory PeriphAHB3 1140981760 131072 2</ConfigRanges46>
+        <ConfigRanges47>Memory PeriphAHB3_NSC 1409417216 131072 2</ConfigRanges47>
+        <ConfigRanges48>Memory PeriphAPB4 1174405120 65536 2</ConfigRanges48>
+        <ConfigRanges49>Memory PeriphAPB4_NSC 1442840576 65536 2</ConfigRanges49>
+        <ConfigRanges50>Memory PeriphAHB4 1174536192 65536 2</ConfigRanges50>
+        <ConfigRanges51>Memory PeriphAHB4_NSC 1442971648 65536 2</ConfigRanges51>
+        <ConfigRanges52>Memory PeriphAPB5 1207959552 65536 2</ConfigRanges52>
+        <ConfigRanges53>Memory PeriphAPB5_NSC 1476395008 65536 2</ConfigRanges53>
+        <ConfigRanges54>Memory PeriphAHB5 1208090624 1048576 2</ConfigRanges54>
+        <ConfigRanges55>Memory PeriphAHB5_NSC 1476526080 1048576 2</ConfigRanges55>
+        <ConfigRanges56>Memory Trace_debug 1308622848 45056 2</ConfigRanges56>
+        <ConfigRanges57>Memory Trace_debug_NSC 1577058304 45056 2</ConfigRanges57>
+        <ConfigRanges58>Memory ExtDev1 1610612736 1073741824 2</ConfigRanges58>
+        <ConfigRanges59>Memory ExtMem 3221225472 536870912 0</ConfigRanges59>
+        <ConfigRanges60>Memory SystemSFR 3758096384 1048576 2</ConfigRanges60>
+    </PlDdfRanges>
+    <Trace2>
+        <Enabled>0</Enabled>
+        <ShowSource>0</ShowSource>
+    </Trace2>
+    <SWOTraceWindow>
+        <PcSampling>0</PcSampling>
+        <InterruptLogs>0</InterruptLogs>
+        <ForcedTimeStamps>0</ForcedTimeStamps>
+        <EventCPI>0</EventCPI>
+        <EventEXC>0</EventEXC>
+        <EventFOLD>0</EventFOLD>
+        <EventLSU>0</EventLSU>
+        <EventSLEEP>0</EventSLEEP>
+    </SWOTraceWindow>
+    <DataLog>
+        <GraphEnabled>0</GraphEnabled>
+        <LogEnabled>0</LogEnabled>
+        <ShowTimeLog>1</ShowTimeLog>
+        <SumEnabled>0</SumEnabled>
+        <ShowTimeSum>1</ShowTimeSum>
+    </DataLog>
+    <InterruptLog>
+        <GraphEnabled>0</GraphEnabled>
+        <LogEnabled>0</LogEnabled>
+        <ShowTimeLog>1</ShowTimeLog>
+        <SumEnabled>0</SumEnabled>
+        <ShowTimeSum>1</ShowTimeSum>
+        <SumSortOrder>0</SumSortOrder>
+    </InterruptLog>
+    <EventLog>
+        <GraphEnabled>0</GraphEnabled>
+        <LogEnabled>0</LogEnabled>
+        <ShowTimeLog>1</ShowTimeLog>
+        <Title_0>Ch3</Title_0>
+        <Symbol_0>0 0 1</Symbol_0>
+        <Title_1>Ch2</Title_1>
+        <Symbol_1>0 0 1</Symbol_1>
+        <Title_2>Ch1</Title_2>
+        <Symbol_2>0 0 1</Symbol_2>
+        <Title_3>Ch0</Title_3>
+        <Symbol_3>0 0 1</Symbol_3>
+        <SumEnabled>0</SumEnabled>
+        <ShowTimeSum>1</ShowTimeSum>
+        <SumSortOrder>0</SumSortOrder>
+    </EventLog>
+    <DriverProfiling>
+        <Enabled>0</Enabled>
+        <Mode>3</Mode>
+        <Graph>0</Graph>
+        <Symbiont>0</Symbiont>
+        <Exclusions />
+    </DriverProfiling>
+    <TermIOLog>
+        <LoggingEnabled>_ 0</LoggingEnabled>
+        <LogFile>_ ""</LogFile>
+    </TermIOLog>
+    <DisassembleMode>
+        <mode>0</mode>
+    </DisassembleMode>
+    <Breakpoints2>
+        <Count>0</Count>
+    </Breakpoints2>
+    <Aliases>
+        <Count>0</Count>
+        <SuppressDialog>0</SuppressDialog>
+    </Aliases>
+</settings>

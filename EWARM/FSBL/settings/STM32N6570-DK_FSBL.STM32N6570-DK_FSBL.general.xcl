@@ -1,0 +1,15 @@
+C:\iar\ewarm-9.60.3\arm\bin\armPROC.dll
+
+ C:\iar\ewarm-9.60.3\arm\bin\armSTLINK.dll
+
+ C:\Users\HANS\STM32N6570-DK\EWARM\FSBL\STM32N6570-DK_FSBL\Exe\STM32N6570-DK_FSBL.out
+
+ --plugin=C:\iar\ewarm-9.60.3\arm\bin\armLibSupportUniversal.dll
+
+ --macro=C:\Users\HANS\STM32N6570-DK\EWARM\FSBL\setup.mac
+
+ --flash_loader=C:\iar\ewarm-9.60.3\arm\config\flashloader\ST\FlashSTM32N6570-DK.board
+
+ 
+
+

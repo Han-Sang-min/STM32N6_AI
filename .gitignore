@@ -1,0 +1,23 @@
+# All
+**/.vscode/
+**/.idea/
+
+# Root
+.settings/
+STM32CubeIDE/
+.mxproject
+
+# EWARM
+EWARM/FSBL/STM32N6570-DK_FSBL/
+EWARM/Appli/STM32N6570-DK_Appli/
+
+Secure_nsclib
+Secure_nsclib/
+!Secure_nsclib/secure_nsc.h
+
+# Appli
+# Appli/Debug/
+Appli/.settings/
+
+# FSBL
+FSBL/.settings/

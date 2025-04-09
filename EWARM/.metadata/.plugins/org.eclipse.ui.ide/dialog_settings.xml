@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<list key="installedFeatures">
+		<item value="org.eclipse.emf.common:2.23.0.v20210618-0700"/>
+		<item value="org.eclipse.emf.ecore:2.25.0.v20210816-0937"/>
+		<item value="org.eclipse.help:2.3.700.v20210906-0500"/>
+		<item value="org.eclipse.justj.openjdk.hotspot.jre.full:11.0.20.v20230831-1118"/>
+		<item value="org.eclipse.platform:4.21.0.v20210906-0842"/>
+		<item value="org.eclipse.rcp:4.21.0.v20210906-0842"/>
+	</list>
+</section>

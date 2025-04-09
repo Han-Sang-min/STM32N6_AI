@@ -1,0 +1,906 @@
+{
+  "Application": {
+    "Screens": [
+      {
+        "Name": "Main",
+        "Components": [
+          {
+            "Type": "Image",
+            "Name": "image1",
+            "Width": 800,
+            "Height": 480,
+            "RelativeFilename": "__generated\\alternate_theme_images_backgrounds_800x480_poly.png"
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "GoToCamera_BT",
+            "X": 150,
+            "Y": 380,
+            "Width": 175,
+            "Height": 50,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_round_pressed.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_round_disabled.png",
+            "TextId": "__SingleUse_ZKEN",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0"
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "GoToMenu_BT",
+            "X": 500,
+            "Y": 380,
+            "Width": 175,
+            "Height": 50,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_round_pressed.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_round_disabled.png",
+            "TextId": "__SingleUse_TO82",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0"
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "Click_CameraButton",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "GoToCamera_BT"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Camera"
+            }
+          },
+          {
+            "InteractionName": "GoTo_CameraScreen",
+            "Trigger": {
+              "Type": "TriggerPhysicalButtonClicked",
+              "ButtonKey": 1
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Camera"
+            }
+          },
+          {
+            "InteractionName": "Click_MenuButton",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "GoToMenu_BT"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Menu"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "Camera",
+        "Components": [
+          {
+            "Type": "Image",
+            "Name": "cameraScreen",
+            "X": 160,
+            "Width": 80,
+            "Height": 80
+          },
+          {
+            "Type": "Image",
+            "Name": "aiScreen",
+            "X": 160,
+            "Width": 80,
+            "Height": 80
+          },
+          {
+            "Type": "ButtonWithIcon",
+            "Name": "buttonWithIcon1",
+            "X": 10,
+            "Y": 10,
+            "Width": 110,
+            "Height": 50,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_tiny_round_pressed.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_tiny_round_normal.png",
+            "IconPressed": "__generated\\icon_theme_images_hardware_keyboard_backspace_50_50_E8F6FB.svg.png",
+            "IconReleased": "__generated\\icon_theme_images_hardware_keyboard_backspace_50_50_E8F6FB.svg.png",
+            "IconX": 30,
+            "IconHeight": 50,
+            "IconWidth": 50,
+            "Preset": "alternate_theme\\presets\\button\\regular\\height_50\\tiny_round_normal.json"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "FPStext",
+            "X": 10,
+            "Y": 112,
+            "Width": 108,
+            "Height": 24,
+            "TextId": "__SingleUse_194R",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_81C4",
+              "UseBuffer": true,
+              "BufferSize": 20
+            }
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "Interaction1",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonWithIcon1"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Main"
+            }
+          },
+          {
+            "InteractionName": "GoToMainScreen",
+            "Trigger": {
+              "Type": "TriggerPhysicalButtonClicked",
+              "ButtonKey": 2
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Main"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "Menu",
+        "CanvasBufferSize": 12000,
+        "Components": [
+          {
+            "Type": "Container",
+            "Name": "screen_space",
+            "X": 160,
+            "Y": 104,
+            "Width": 480,
+            "Height": 272,
+            "Components": [
+              {
+                "Type": "SvgImage",
+                "Name": "base",
+                "X": 1,
+                "Width": 480,
+                "Height": 272,
+                "Image": "base.svg",
+                "FitImageToSize": true,
+                "ImageHorizontalScale": 1.0,
+                "ImageVerticalScale": 0.99
+              },
+              {
+                "Type": "Container",
+                "Name": "menu_banner_container",
+                "Width": 58,
+                "Height": 272,
+                "Components": [
+                  {
+                    "Type": "SvgImage",
+                    "Name": "menu_banner",
+                    "Width": 58,
+                    "Height": 272,
+                    "Image": "menu banner.svg",
+                    "FitImageToSize": true,
+                    "ImageHorizontalScale": 0.97,
+                    "ImageVerticalScale": 1.0
+                  },
+                  {
+                    "Type": "SvgImage",
+                    "Name": "setting_icon_2",
+                    "X": 13,
+                    "Y": 212,
+                    "Width": 33,
+                    "Height": 33,
+                    "Image": "diagnostic icon.svg",
+                    "FitImageToSize": true,
+                    "ImageHorizontalScale": 0.89,
+                    "ImageVerticalScale": 1.0
+                  }
+                ]
+              },
+              {
+                "Type": "SvgImage",
+                "Name": "left_upper_wing",
+                "X": 60,
+                "Y": 45,
+                "Width": 420,
+                "Height": 3,
+                "Image": "left upper wing-1.svg",
+                "FitImageToSize": true,
+                "ImageHorizontalScale": 1.0,
+                "ImageVerticalScale": 0.75
+              }
+            ]
+          },
+          {
+            "Type": "Container",
+            "Name": "Light_Bar_container_1_1",
+            "X": 376,
+            "Y": 228,
+            "Width": 248,
+            "Height": 58,
+            "Components": [
+              {
+                "Type": "FlexButton",
+                "Name": "adj_left_button_1",
+                "Width": 20,
+                "Height": 53,
+                "ButtonTrigger": {
+                  "Type": "ClickButtonTrigger"
+                },
+                "ButtonStyles": [
+                  {
+                    "Type": "ImageButtonStyle",
+                    "ImageReleased": "group_292.png",
+                    "ImagePressed": "group_292.png"
+                  }
+                ]
+              },
+              {
+                "Type": "FlexButton",
+                "Name": "adj_right_button_1",
+                "X": 225,
+                "Width": 20,
+                "Height": 53,
+                "ButtonTrigger": {
+                  "Type": "ClickButtonTrigger"
+                },
+                "ButtonStyles": [
+                  {
+                    "Type": "ImageButtonStyle",
+                    "ImageReleased": "group293.png",
+                    "ImagePressed": "group293.png"
+                  }
+                ]
+              },
+              {
+                "Type": "CustomContainerInstance",
+                "Name": "lightProgressContainer1",
+                "X": 25,
+                "Y": 2,
+                "Width": 195,
+                "Height": 49,
+                "CustomContainerDefinitionName": "LightProgressContainer"
+              }
+            ]
+          },
+          {
+            "Type": "Container",
+            "Name": "Light_Bar_container_1_1_1",
+            "X": 376,
+            "Y": 161,
+            "Width": 248,
+            "Height": 58,
+            "Components": [
+              {
+                "Type": "FlexButton",
+                "Name": "adj_left_button_0",
+                "Width": 20,
+                "Height": 53,
+                "ButtonTrigger": {
+                  "Type": "ClickButtonTrigger"
+                },
+                "ButtonStyles": [
+                  {
+                    "Type": "ImageButtonStyle",
+                    "ImageReleased": "group_292.png",
+                    "ImagePressed": "group_292.png"
+                  }
+                ]
+              },
+              {
+                "Type": "FlexButton",
+                "Name": "adj_right_button_0",
+                "X": 225,
+                "Width": 20,
+                "Height": 53,
+                "ButtonTrigger": {
+                  "Type": "ClickButtonTrigger"
+                },
+                "ButtonStyles": [
+                  {
+                    "Type": "ImageButtonStyle",
+                    "ImageReleased": "group293.png",
+                    "ImagePressed": "group293.png"
+                  }
+                ]
+              },
+              {
+                "Type": "CustomContainerInstance",
+                "Name": "lightProgressContainer0",
+                "X": 25,
+                "Y": 2,
+                "Width": 195,
+                "Height": 49,
+                "CustomContainerDefinitionName": "LightProgressContainer"
+              }
+            ]
+          },
+          {
+            "Type": "Container",
+            "Name": "container2",
+            "X": 376,
+            "Y": 296,
+            "Width": 107,
+            "Height": 53,
+            "Components": [
+              {
+                "Type": "SvgImage",
+                "Name": "SVGImage7",
+                "X": 24,
+                "Width": 59,
+                "Height": 53,
+                "Image": "group_93.svg",
+                "ImageHorizontalScale": 1.0,
+                "ImageVerticalScale": 1.0
+              },
+              {
+                "Type": "TextArea",
+                "Name": "st_daytime",
+                "X": 25,
+                "Y": 10,
+                "Width": 59,
+                "Height": 43,
+                "TextId": "numberText",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "Wildcard1": {
+                  "TextId": "__SingleUse_RZO4",
+                  "UseBuffer": true,
+                  "BufferSize": 3
+                }
+              },
+              {
+                "Type": "FlexButton",
+                "Name": "adj_left_button_2",
+                "Width": 20,
+                "Height": 53,
+                "ButtonTrigger": {
+                  "Type": "ClickButtonTrigger"
+                },
+                "ButtonStyles": [
+                  {
+                    "Type": "ImageButtonStyle",
+                    "ImageReleased": "group_292.png",
+                    "ImagePressed": "group_292.png"
+                  }
+                ]
+              },
+              {
+                "Type": "FlexButton",
+                "Name": "adj_right_button_2",
+                "X": 87,
+                "Width": 20,
+                "Height": 53,
+                "ButtonTrigger": {
+                  "Type": "ClickButtonTrigger"
+                },
+                "ButtonStyles": [
+                  {
+                    "Type": "ImageButtonStyle",
+                    "ImageReleased": "group293.png",
+                    "ImagePressed": "group293.png"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "Type": "Container",
+            "Name": "container2_1",
+            "X": 514,
+            "Y": 296,
+            "Width": 107,
+            "Height": 53,
+            "Components": [
+              {
+                "Type": "SvgImage",
+                "Name": "SVGImage7_1",
+                "X": 24,
+                "Width": 59,
+                "Height": 53,
+                "Image": "group_93.svg",
+                "ImageHorizontalScale": 1.0,
+                "ImageVerticalScale": 1.0
+              },
+              {
+                "Type": "TextArea",
+                "Name": "end_daytime",
+                "X": 24,
+                "Y": 10,
+                "Width": 58,
+                "Height": 28,
+                "TextId": "__SingleUse_TS6B",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "Wildcard1": {
+                  "TextId": "__SingleUse_HO6M",
+                  "UseBuffer": true,
+                  "BufferSize": 3
+                }
+              },
+              {
+                "Type": "FlexButton",
+                "Name": "adj_left_button_3",
+                "Width": 20,
+                "Height": 53,
+                "ButtonTrigger": {
+                  "Type": "ClickButtonTrigger"
+                },
+                "ButtonStyles": [
+                  {
+                    "Type": "ImageButtonStyle",
+                    "ImageReleased": "group_292.png",
+                    "ImagePressed": "group_292.png"
+                  }
+                ]
+              },
+              {
+                "Type": "FlexButton",
+                "Name": "adj_right_button_3",
+                "X": 87,
+                "Width": 20,
+                "Height": 53,
+                "ButtonTrigger": {
+                  "Type": "ClickButtonTrigger"
+                },
+                "ButtonStyles": [
+                  {
+                    "Type": "ImageButtonStyle",
+                    "ImageReleased": "group293.png",
+                    "ImagePressed": "group293.png"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "Type": "Image",
+            "Name": "Image2",
+            "X": 242,
+            "Y": 176,
+            "Width": 46,
+            "Height": 29,
+            "RelativeFilename": "daytime.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "Image3",
+            "X": 242,
+            "Y": 309,
+            "Width": 101,
+            "Height": 29,
+            "RelativeFilename": "daytime_time.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "Image4",
+            "X": 333,
+            "Y": 111,
+            "Width": 157,
+            "Height": 29,
+            "RelativeFilename": "LCD_Brightness_Adjustment.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "Image5",
+            "X": 242,
+            "Y": 240,
+            "Width": 46,
+            "Height": 29,
+            "RelativeFilename": "nightTime.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "Image6",
+            "X": 159,
+            "Y": 179,
+            "Width": 59,
+            "Height": 11,
+            "RelativeFilename": "pass_180.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "Image6_1",
+            "X": 159,
+            "Y": 285,
+            "Width": 59,
+            "Height": 11,
+            "RelativeFilename": "pass_180.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "Image7",
+            "X": 171,
+            "Y": 224,
+            "Width": 36,
+            "Height": 33,
+            "RelativeFilename": "spanner_hammer icon.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "Image8",
+            "X": 486,
+            "Y": 318,
+            "Width": 25,
+            "Height": 9,
+            "RelativeFilename": "pass_2770.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "Image9",
+            "X": 173,
+            "Y": 131,
+            "Width": 33,
+            "Height": 33,
+            "RelativeFilename": "setting_icon.png"
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "GoTo_Camera",
+            "Trigger": {
+              "Type": "TriggerPhysicalButtonClicked",
+              "ButtonKey": 1
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Camera"
+            }
+          },
+          {
+            "InteractionName": "GoTo_Main",
+            "Trigger": {
+              "Type": "TriggerPhysicalButtonClicked",
+              "ButtonKey": 2
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Main"
+            }
+          },
+          {
+            "InteractionName": "daytime_left_button",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "adj_left_button_0"
+            },
+            "Action": {
+              "Type": "ActionExecuteCode",
+              "Code": "lightProgressContainer0.hideLastLight();"
+            }
+          },
+          {
+            "InteractionName": "daytime_right_button",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "adj_right_button_0"
+            },
+            "Action": {
+              "Type": "ActionExecuteCode",
+              "Code": "lightProgressContainer0.showNextLight();"
+            }
+          },
+          {
+            "InteractionName": "st_daytime_left",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "adj_left_button_2"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "stDaytimeLeftPressed"
+            }
+          },
+          {
+            "InteractionName": "st_daytime_right",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "adj_right_button_2"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "stDaytimeRightPressed"
+            }
+          },
+          {
+            "InteractionName": "end_daytime_right",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "adj_right_button_3"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "endDaytimeRightPressed"
+            }
+          },
+          {
+            "InteractionName": "end_daytime_left",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "adj_left_button_3"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "endDaytimeLeftPressed"
+            }
+          },
+          {
+            "InteractionName": "nighttime_right_button",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "adj_right_button_1"
+            },
+            "Action": {
+              "Type": "ActionExecuteCode",
+              "Code": "lightProgressContainer1.showNextLight();"
+            }
+          },
+          {
+            "InteractionName": "nighttime_left_button",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "adj_left_button_1"
+            },
+            "Action": {
+              "Type": "ActionExecuteCode",
+              "Code": "lightProgressContainer1.hideLastLight();"
+            }
+          }
+        ]
+      }
+    ],
+    "CustomContainerDefinitions": [
+      {
+        "Name": "LightProgressContainer",
+        "X": 249,
+        "Y": 179,
+        "Width": 195,
+        "Height": 49,
+        "Components": [
+          {
+            "Type": "Image",
+            "Name": "light_off_0",
+            "Width": 20,
+            "Height": 49,
+            "RelativeFilename": "square_272.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "light_off_1",
+            "X": 25,
+            "Width": 20,
+            "Height": 49,
+            "RelativeFilename": "square_272.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "light_off_2",
+            "X": 50,
+            "Width": 20,
+            "Height": 49,
+            "RelativeFilename": "square_272.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "light_off_3",
+            "X": 75,
+            "Width": 20,
+            "Height": 49,
+            "RelativeFilename": "square_272.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "light_off_4",
+            "X": 100,
+            "Width": 20,
+            "Height": 49,
+            "RelativeFilename": "square_272.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "light_off_5",
+            "X": 125,
+            "Width": 20,
+            "Height": 49,
+            "RelativeFilename": "square_272.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "light_off_6",
+            "X": 150,
+            "Width": 20,
+            "Height": 49,
+            "RelativeFilename": "square_272.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "light_off_7",
+            "X": 175,
+            "Width": 20,
+            "Height": 49,
+            "RelativeFilename": "square_272.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "light_on_0",
+            "Width": 20,
+            "Height": 49,
+            "Visible": false,
+            "RelativeFilename": "light_on.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "light_on_1",
+            "X": 25,
+            "Width": 20,
+            "Height": 49,
+            "Visible": false,
+            "RelativeFilename": "light_on.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "light_on_2",
+            "X": 50,
+            "Width": 20,
+            "Height": 49,
+            "Visible": false,
+            "RelativeFilename": "light_on.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "light_on_3",
+            "X": 75,
+            "Width": 20,
+            "Height": 49,
+            "Visible": false,
+            "RelativeFilename": "light_on.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "light_on_4",
+            "X": 100,
+            "Width": 20,
+            "Height": 49,
+            "Visible": false,
+            "RelativeFilename": "light_on.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "light_on_5",
+            "X": 125,
+            "Width": 20,
+            "Height": 49,
+            "Visible": false,
+            "RelativeFilename": "light_on.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "light_on_6",
+            "X": 150,
+            "Width": 20,
+            "Height": 49,
+            "Visible": false,
+            "RelativeFilename": "light_on.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "light_on_7",
+            "X": 175,
+            "Width": 20,
+            "Height": 49,
+            "Visible": false,
+            "RelativeFilename": "light_on.png"
+          }
+        ],
+        "Interactions": []
+      }
+    ],
+    "Name": "TestUI",
+    "Resolution": {
+      "Width": 800,
+      "Height": 480
+    },
+    "SelectedColorDepth": 16,
+    "StartupScreenName": "Main",
+    "SelectedStartupLanguage": "GB",
+    "TouchGfxPath": "../Middlewares/ST/touchgfx",
+    "UIPath": ".",
+    "AvailableColorDepths": [
+      16
+    ],
+    "AvailableLCDs": {
+      "16": "LCDGPU2D"
+    },
+    "AvailableSections": [
+      "ExtFlashSection",
+      "IntFlashSection"
+    ],
+    "AvailableResolutions": [
+      {
+        "Width": 800,
+        "Height": 480
+      }
+    ],
+    "PhysicalButtons": [
+      {
+        "Key": 1,
+        "Name": "BTN_TAMP"
+      },
+      {
+        "Key": 2,
+        "Name": "BTN_USER1"
+      }
+    ],
+    "GenerateAssetsCommand": "make -f simulator/gcc/Makefile assets -j8",
+    "GenerateAssetsCommandOverride": "make -f simulator/gcc/Makefile assets -j24 & ruby ../../Patchscripts/patch.rb",
+    "PostGenerateCommand": "touchgfx update_project --project-file=simulator/msvs/Application.vcxproj",
+    "PostGenerateTargetCommand": "touchgfx update_project",
+    "CompileSimulatorCommand": "make -f simulator/gcc/Makefile -j8",
+    "CompileSimulatorCommandOverride": "make -f simulator/gcc/Makefile -j24",
+    "RunSimulatorCommand": "build\\bin\\simulator.exe",
+    "LandscapeSkinX": 0,
+    "LandscapeSkinY": 0,
+    "PortraitSkinX": 0,
+    "PortraitSkinY": 0,
+    "DisplayOrientation": "Landscape",
+    "Family": "STM32N6",
+    "SubFamily": "STM32N6x7",
+    "Toolchain": "EWARM V9.40",
+    "Platform": "m55",
+    "ProjectFile": "../../STM32N6570-DK.ioc",
+    "OptionalComponentsRoot": "../Middlewares/ST/touchgfx_components",
+    "OptionalComponents": [
+      "GPU2D"
+    ],
+    "AdditionalFeatures": [
+      "GPU2DVector",
+      "VectorFonts",
+      "Video"
+    ]
+  },
+  "Version": "4.24.2",
+  "CreatedBy": "4.24.2"
+}

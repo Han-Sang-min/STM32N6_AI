@@ -1,0 +1,697 @@
+{
+    "_allocate_inputs": 4,
+    "_allocate_outputs": 4,
+    "cli_parameters": "generate --target stm32n6 --name network_1740011464497 -m C:/Users/HANS/Downloads/stm32ai-modelzoo-main/object_detection/tiny_yolo_v2/ST_pretrainedmodel_public_dataset/coco_2017_person/tiny_yolo_v2_416/tiny_yolo_v2_416_int8.tflite --compression none --verbosity 1 --workspace C:/Users/HANS/AppData/Local/Temp/mxAI_workspace6137559612853001277987551391970449 --output C:/Users/HANS/.stm32cubemx/network_output",
+    "cli_version": {
+        "extra": "20049",
+        "major": 2,
+        "micro": 0,
+        "minor": 0
+    },
+    "cli_version_str": "2.0.0-20049",
+    "code_size": 0,
+    "compression": [],
+    "date_time": "2025-02-20T10:27:53+0900",
+    "error": 0,
+    "error_str": [],
+    "exec_cmd": "generate",
+    "exec_duration": 0.0,
+    "hash": "0x51b222f2eb47440d56d72650505a9487",
+    "inputs": [
+        "serving_default_input_10"
+    ],
+    "layers": [
+        {
+            "c_id": [
+                0
+            ],
+            "extras": {
+                "n_macc": 0,
+                "n_params": 0,
+                "psize": 0,
+                "rom_output": {
+                    "c_size": 519168,
+                    "fmt": {
+                        "format": "u8"
+                    },
+                    "shape": [
+                        416,
+                        3,
+                        416
+                    ]
+                },
+                "rom_size": 0
+            },
+            "id": 0,
+            "inputs": [],
+            "name": "serving_default_input_10",
+            "original": "",
+            "type": "Input"
+        },
+        {
+            "c_id": [],
+            "extras": {
+                "n_macc": 1038336,
+                "n_params": 0,
+                "psize": 0,
+                "rom_output": {
+                    "c_size": 519169,
+                    "fmt": {
+                        "format": "s8"
+                    },
+                    "shape": [
+                        416,
+                        3,
+                        416
+                    ]
+                },
+                "rom_size": 0
+            },
+            "id": 0,
+            "inputs": [
+                "serving_default_input_10"
+            ],
+            "name": "conversion_0",
+            "original": "QUANTIZE",
+            "type": "Conversion"
+        },
+        {
+            "c_id": [],
+            "extras": {
+                "n_macc": 74760208,
+                "n_params": 448,
+                "psize": 496,
+                "rom_output": {
+                    "c_size": 692224,
+                    "fmt": {
+                        "format": "s8"
+                    },
+                    "shape": [
+                        208,
+                        16,
+                        208
+                    ]
+                },
+                "rom_size": 0
+            },
+            "id": 1,
+            "inputs": [
+                "conversion_0"
+            ],
+            "name": "conv2d_1",
+            "original": "CONV_2D",
+            "type": "Conv2D"
+        },
+        {
+            "c_id": [],
+            "extras": {
+                "n_macc": 2768896,
+                "n_params": 0,
+                "psize": 0,
+                "rom_size": 0
+            },
+            "id": 2,
+            "inputs": [
+                "conv2d_1"
+            ],
+            "name": "nl_2",
+            "original": "LEAKY_RELU",
+            "type": "Nonlinearity"
+        },
+        {
+            "c_id": [
+                1
+            ],
+            "extras": {
+                "n_macc": 2768896,
+                "n_params": 0,
+                "psize": 0,
+                "rom_size": 496
+            },
+            "id": 3,
+            "inputs": [
+                "nl_2"
+            ],
+            "name": "pool_3",
+            "original": "MAX_POOL_2D",
+            "type": "Pool"
+        },
+        {
+            "c_id": [
+                2
+            ],
+            "extras": {
+                "n_macc": 199360544,
+                "n_params": 4640,
+                "psize": 4736,
+                "rom_output": {
+                    "c_size": 346112,
+                    "fmt": {
+                        "format": "s8"
+                    },
+                    "shape": [
+                        104,
+                        32,
+                        104
+                    ]
+                },
+                "rom_size": 0
+            },
+            "id": 4,
+            "inputs": [
+                "pool_3"
+            ],
+            "name": "conv2d_4",
+            "original": "CONV_2D",
+            "type": "Conv2D"
+        },
+        {
+            "c_id": [],
+            "extras": {
+                "n_macc": 1384448,
+                "n_params": 0,
+                "psize": 0,
+                "rom_size": 0
+            },
+            "id": 5,
+            "inputs": [
+                "conv2d_4"
+            ],
+            "name": "nl_5",
+            "original": "LEAKY_RELU",
+            "type": "Nonlinearity"
+        },
+        {
+            "c_id": [
+                3
+            ],
+            "extras": {
+                "n_macc": 1384448,
+                "n_params": 0,
+                "psize": 0,
+                "rom_size": 4736
+            },
+            "id": 6,
+            "inputs": [
+                "nl_5"
+            ],
+            "name": "pool_6",
+            "original": "MAX_POOL_2D",
+            "type": "Pool"
+        },
+        {
+            "c_id": [
+                4
+            ],
+            "extras": {
+                "n_macc": 199360576,
+                "n_params": 18496,
+                "psize": 18688,
+                "rom_output": {
+                    "c_size": 173056,
+                    "fmt": {
+                        "format": "s8"
+                    },
+                    "shape": [
+                        52,
+                        64,
+                        52
+                    ]
+                },
+                "rom_size": 0
+            },
+            "id": 7,
+            "inputs": [
+                "pool_6"
+            ],
+            "name": "conv2d_7",
+            "original": "CONV_2D",
+            "type": "Conv2D"
+        },
+        {
+            "c_id": [],
+            "extras": {
+                "n_macc": 692224,
+                "n_params": 0,
+                "psize": 0,
+                "rom_size": 0
+            },
+            "id": 8,
+            "inputs": [
+                "conv2d_7"
+            ],
+            "name": "nl_8",
+            "original": "LEAKY_RELU",
+            "type": "Nonlinearity"
+        },
+        {
+            "c_id": [
+                5
+            ],
+            "extras": {
+                "n_macc": 692224,
+                "n_params": 0,
+                "psize": 0,
+                "rom_size": 18688
+            },
+            "id": 9,
+            "inputs": [
+                "nl_8"
+            ],
+            "name": "pool_9",
+            "original": "MAX_POOL_2D",
+            "type": "Pool"
+        },
+        {
+            "c_id": [
+                6
+            ],
+            "extras": {
+                "n_macc": 199360640,
+                "n_params": 73856,
+                "psize": 74240,
+                "rom_output": {
+                    "c_size": 86528,
+                    "fmt": {
+                        "format": "s8"
+                    },
+                    "shape": [
+                        26,
+                        128,
+                        26
+                    ]
+                },
+                "rom_size": 0
+            },
+            "id": 10,
+            "inputs": [
+                "pool_9"
+            ],
+            "name": "conv2d_10",
+            "original": "CONV_2D",
+            "type": "Conv2D"
+        },
+        {
+            "c_id": [],
+            "extras": {
+                "n_macc": 346112,
+                "n_params": 0,
+                "psize": 0,
+                "rom_size": 0
+            },
+            "id": 11,
+            "inputs": [
+                "conv2d_10"
+            ],
+            "name": "nl_11",
+            "original": "LEAKY_RELU",
+            "type": "Nonlinearity"
+        },
+        {
+            "c_id": [
+                7
+            ],
+            "extras": {
+                "n_macc": 346112,
+                "n_params": 0,
+                "psize": 0,
+                "rom_size": 74240
+            },
+            "id": 12,
+            "inputs": [
+                "nl_11"
+            ],
+            "name": "pool_12",
+            "original": "MAX_POOL_2D",
+            "type": "Pool"
+        },
+        {
+            "c_id": [
+                8
+            ],
+            "extras": {
+                "n_macc": 199360768,
+                "n_params": 295168,
+                "psize": 295936,
+                "rom_output": {
+                    "c_size": 43264,
+                    "fmt": {
+                        "format": "s8"
+                    },
+                    "shape": [
+                        13,
+                        256,
+                        13
+                    ]
+                },
+                "rom_size": 0
+            },
+            "id": 13,
+            "inputs": [
+                "pool_12"
+            ],
+            "name": "conv2d_13",
+            "original": "CONV_2D",
+            "type": "Conv2D"
+        },
+        {
+            "c_id": [],
+            "extras": {
+                "n_macc": 173056,
+                "n_params": 0,
+                "psize": 0,
+                "rom_size": 0
+            },
+            "id": 14,
+            "inputs": [
+                "conv2d_13"
+            ],
+            "name": "nl_14",
+            "original": "LEAKY_RELU",
+            "type": "Nonlinearity"
+        },
+        {
+            "c_id": [
+                9
+            ],
+            "extras": {
+                "n_macc": 173056,
+                "n_params": 0,
+                "psize": 0,
+                "rom_size": 295936
+            },
+            "id": 15,
+            "inputs": [
+                "nl_14"
+            ],
+            "name": "pool_15",
+            "original": "MAX_POOL_2D",
+            "type": "Pool"
+        },
+        {
+            "c_id": [
+                10,
+                11
+            ],
+            "extras": {
+                "n_macc": 199361024,
+                "n_params": 1180160,
+                "psize": 1181696,
+                "rom_output": {
+                    "c_size": 86528,
+                    "fmt": {
+                        "format": "s8"
+                    },
+                    "shape": [
+                        13,
+                        512,
+                        13
+                    ]
+                },
+                "rom_size": 1181696
+            },
+            "id": 16,
+            "inputs": [
+                "pool_15"
+            ],
+            "name": "conv2d_16",
+            "original": "CONV_2D",
+            "type": "Conv2D"
+        },
+        {
+            "c_id": [
+                12
+            ],
+            "extras": {
+                "n_macc": 86528,
+                "n_params": 0,
+                "psize": 0,
+                "rom_output": {
+                    "c_size": 86528,
+                    "fmt": {
+                        "format": "s8"
+                    },
+                    "shape": [
+                        13,
+                        512,
+                        13
+                    ]
+                },
+                "rom_size": 0
+            },
+            "id": 17,
+            "inputs": [
+                "conv2d_16"
+            ],
+            "name": "nl_17",
+            "original": "LEAKY_RELU",
+            "type": "Nonlinearity"
+        },
+        {
+            "c_id": [
+                13
+            ],
+            "extras": {
+                "n_macc": 346112,
+                "n_params": 0,
+                "psize": 0,
+                "rom_output": {
+                    "c_size": 86528,
+                    "fmt": {
+                        "format": "s8"
+                    },
+                    "shape": [
+                        13,
+                        512,
+                        13
+                    ]
+                },
+                "rom_size": 0
+            },
+            "id": 18,
+            "inputs": [
+                "nl_17"
+            ],
+            "name": "pool_18",
+            "original": "MAX_POOL_2D",
+            "type": "Pool"
+        },
+        {
+            "c_id": [
+                14,
+                15
+            ],
+            "extras": {
+                "n_macc": 797443072,
+                "n_params": 4719616,
+                "psize": 4722688,
+                "rom_output": {
+                    "c_size": 173056,
+                    "fmt": {
+                        "format": "s8"
+                    },
+                    "shape": [
+                        13,
+                        1024,
+                        13
+                    ]
+                },
+                "rom_size": 4722688
+            },
+            "id": 19,
+            "inputs": [
+                "pool_18"
+            ],
+            "name": "conv2d_19",
+            "original": "CONV_2D",
+            "type": "Conv2D"
+        },
+        {
+            "c_id": [
+                16
+            ],
+            "extras": {
+                "n_macc": 173056,
+                "n_params": 0,
+                "psize": 0,
+                "rom_output": {
+                    "c_size": 173056,
+                    "fmt": {
+                        "format": "s8"
+                    },
+                    "shape": [
+                        13,
+                        1024,
+                        13
+                    ]
+                },
+                "rom_size": 0
+            },
+            "id": 20,
+            "inputs": [
+                "conv2d_19"
+            ],
+            "name": "nl_20",
+            "original": "LEAKY_RELU",
+            "type": "Nonlinearity"
+        },
+        {
+            "c_id": [
+                17,
+                18
+            ],
+            "extras": {
+                "n_macc": 797442560,
+                "n_params": 4719104,
+                "psize": 4720640,
+                "rom_output": {
+                    "c_size": 86528,
+                    "fmt": {
+                        "format": "s8"
+                    },
+                    "shape": [
+                        13,
+                        512,
+                        13
+                    ]
+                },
+                "rom_size": 4720640
+            },
+            "id": 21,
+            "inputs": [
+                "nl_20"
+            ],
+            "name": "conv2d_21",
+            "original": "CONV_2D",
+            "type": "Conv2D"
+        },
+        {
+            "c_id": [
+                19
+            ],
+            "extras": {
+                "n_macc": 86528,
+                "n_params": 0,
+                "psize": 0,
+                "rom_output": {
+                    "c_size": 86528,
+                    "fmt": {
+                        "format": "s8"
+                    },
+                    "shape": [
+                        13,
+                        512,
+                        13
+                    ]
+                },
+                "rom_size": 0
+            },
+            "id": 22,
+            "inputs": [
+                "conv2d_21"
+            ],
+            "name": "nl_22",
+            "original": "LEAKY_RELU",
+            "type": "Nonlinearity"
+        },
+        {
+            "c_id": [
+                20
+            ],
+            "extras": {
+                "n_macc": 2595870,
+                "n_params": 15390,
+                "psize": 15480,
+                "rom_output": {
+                    "c_size": 5070,
+                    "fmt": {
+                        "format": "s8"
+                    },
+                    "shape": [
+                        13,
+                        30,
+                        13
+                    ]
+                },
+                "rom_size": 15480
+            },
+            "id": 23,
+            "inputs": [
+                "nl_22"
+            ],
+            "name": "conv2d_23",
+            "original": "CONV_2D",
+            "type": "Conv2D"
+        },
+        {
+            "c_id": [
+                21
+            ],
+            "extras": {
+                "n_macc": 10140,
+                "n_params": 0,
+                "psize": 0,
+                "rom_output": {
+                    "c_size": 20280,
+                    "fmt": {
+                        "format": "float"
+                    },
+                    "shape": [
+                        13,
+                        30,
+                        13
+                    ]
+                },
+                "rom_size": 0
+            },
+            "id": 24,
+            "inputs": [
+                "conv2d_23"
+            ],
+            "name": "conversion_24",
+            "original": "DEQUANTIZE",
+            "type": "Conversion"
+        }
+    ],
+    "model_files": [
+        "C:\\Users\\HANS\\Downloads\\stm32ai-modelzoo-main\\object_detection\\tiny_yolo_v2\\ST_pretrainedmodel_public_dataset\\coco_2017_person\\tiny_yolo_v2_416\\tiny_yolo_v2_416_int8.tflite"
+    ],
+    "model_n_params": 11026878,
+    "model_name": "tiny_yolo_v2_416_int8",
+    "model_size": 11034600,
+    "model_type": "tflite",
+    "name": "network_1740011464497",
+    "outputs": [
+        "conversion_24"
+    ],
+    "ram_io_size": [
+        0,
+        0
+    ],
+    "ram_size": 729188,
+    "report_version": 1.1,
+    "rom_cfact": 1.0,
+    "rom_heap_inspector": 2048,
+    "rom_inputs": [
+        {
+            "c_size": 519168,
+            "c_type": "u8",
+            "name": "serving_default_input_10"
+        }
+    ],
+    "rom_n_macc": 2681515434,
+    "rom_outputs": [
+        {
+            "c_size": 20280,
+            "c_type": "float",
+            "name": "conversion_24"
+        }
+    ],
+    "rom_size": 11034600,
+    "strategy": "",
+    "tools_api_version": "2.0.0-20049",
+    "tools_version": "2.0.0-20049",
+    "val_error": -1.0,
+    "val_error_desc": "None (None) #-1",
+    "val_metrics": []
+}

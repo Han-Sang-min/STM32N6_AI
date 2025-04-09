@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspace>
+    <project>
+        <path>$WS_DIR$\Appli\STM32N6570-DK_Appli.ewp</path>
+    </project>
+    <project>
+        <path>$WS_DIR$\FSBL\STM32N6570-DK_FSBL.ewp</path>
+    </project>
+    <batchBuild>
+        <batchDefinition>
+            <name>Total</name>
+            <member>
+                <project>STM32N6570-DK_Appli</project>
+                <configuration>STM32N6570-DK_Appli</configuration>
+            </member>
+            <member>
+                <project>STM32N6570-DK_FSBL</project>
+                <configuration>STM32N6570-DK_FSBL</configuration>
+            </member>
+        </batchDefinition>
+    </batchBuild>
+</workspace>

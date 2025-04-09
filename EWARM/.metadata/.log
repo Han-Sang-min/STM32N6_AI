@@ -1,0 +1,15 @@
+!SESSION 2025-02-06 10:12:30.265 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=11.0.20.1
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -data C:\Users\HANS\tt_stm32n6570-dk\EWARM
+
+!ENTRY com.iar.cdt.arm.toolchain.cmsis.adapter 1 0 2025-02-06 10:12:33.795
+!MESSAGE Using CMSIS pack repositories: http://links.iar.com/cmsis/pack/
+
+!ENTRY com.iar.cmsismanager.product 1 0 2025-02-06 10:12:34.303
+!MESSAGE CMSIS Agent interface registered with service registry at ServiceLocation(host:\\.\pipe\iar-cspy-cpp-binary-com.iar.thrift.service.registry-ce49106c-7bcc-4d1f-baea-631aa6c3d901-1, port:0, protocol:Binary, transport:Pipe)
+
+!ENTRY org.eclipse.core.jobs 2 2 2025-02-06 10:13:17.665
+!MESSAGE Job found still running after platform shutdown.  Jobs should be canceled by the plugin that scheduled them during shutdown: com.arm.cmsis.pack.installer.jobs.CpUpdatePacksJob

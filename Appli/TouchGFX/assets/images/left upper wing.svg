@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="2" height="272" viewBox="0 0 2 272">
+  <defs>
+    <linearGradient id="linear-gradient" x1="1.013" y1="0.8" x2="0" y2="0.173" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#093e1c"/>
+      <stop offset="0.51" stop-color="#00ffa7"/>
+      <stop offset="1" stop-color="#093e1c"/>
+    </linearGradient>
+  </defs>
+  <g id="left_upper_wing" data-name="left upper wing" transform="translate(45.38 -65) rotate(90)">
+    <path id="패스_180" data-name="패스 180" d="M272,28.286H0v-2H272Z" transform="translate(65 17.094)" fill="url(#linear-gradient)"/>
+  </g>
+</svg>

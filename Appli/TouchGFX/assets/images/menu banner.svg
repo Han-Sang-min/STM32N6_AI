@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="58.05" height="272" viewBox="0 0 58.05 272">
+  <defs>
+    <linearGradient id="linear-gradient" y1="0.5" x2="0.901" y2="0.5" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#313437"/>
+      <stop offset="0.146" stop-color="#26282a"/>
+      <stop offset="0.389" stop-color="#1e2023"/>
+      <stop offset="1" stop-color="#34383d"/>
+    </linearGradient>
+  </defs>
+  <path id="menu_banner" data-name="menu banner" d="M0,587.053H58.05v-272H0Z" transform="translate(0 -315.053)" fill="url(#linear-gradient)"/>
+</svg>
