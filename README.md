@@ -19,7 +19,7 @@
 5. `SignAndLoad_App.bat` & `SignAndLoad_FSBL.bat` 스크립트 실행
 6. Boot1을 Low로 설정 후, Reset 실행
 
-# 📷 Camera
+# Camera
 
 **개요**
 
