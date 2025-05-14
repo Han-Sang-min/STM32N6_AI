@@ -2,7 +2,7 @@
 ![image](https://github.com/user-attachments/assets/a205e8b9-c64d-41b8-8a27-fb58e5840302)
 예시 이미지
 
-# 🛠️ 개발 환경
+#  개발 환경
 
 - **Board**:  STM32N6570-DK (Discovery Kit)
 - **IDE**:  IAR Embedded Workbench / TouchGFX Designer
@@ -10,7 +10,7 @@
 - **Toolchain**:  IAR ARM Compiler (EWARM)
 - **Graphics Framework**:  TouchGFX
 
-# 🚀 실행 방법
+# 실행 방법
 
 1. STM32N6570-DK을 PC에 연결 후, Boot1을 High로 설정
 2. EWARM/Project.eww 실행
@@ -65,7 +65,7 @@ sequenceDiagram
 
 ```
 
-# 🧠 AI
+# AI
 
 **개요**
 
@@ -117,7 +117,7 @@ sequenceDiagram
 
 ```
 
-# 🧩 MVP Pattern
+# MVP Pattern
 
 | 구성 요소 | 담당 역할 |
 | --- | --- |
@@ -153,7 +153,7 @@ sequenceDiagram
 
 ```
 
-# 📦 클래스 다이어그램
+# 클래스 다이어그램
 
 ```mermaid
 ---
