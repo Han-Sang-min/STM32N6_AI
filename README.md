@@ -1,8 +1,8 @@
 
 ![image](https://github.com/user-attachments/assets/a205e8b9-c64d-41b8-8a27-fb58e5840302)
-예시 이미지
+Example Image
 
-#  개발 환경
+#  Development Environment
 
 - **Board**:  STM32N6570-DK (Discovery Kit)
 - **IDE**:  IAR Embedded Workbench / TouchGFX Designer
@@ -10,27 +10,27 @@
 - **Toolchain**:  IAR ARM Compiler (EWARM)
 - **Graphics Framework**:  TouchGFX
 
-# 실행 방법
+# Execution Steps
 
-1. STM32N6570-DK을 PC에 연결 후, Boot1을 High로 설정
-2. EWARM/Project.eww 실행
-3. `STM32N6570-DK_Appli` & `STM32N6570-DK_Appli` 각각 Build
-4. Flash scripts/IAR로 이동
-5. `SignAndLoad_App.bat` & `SignAndLoad_FSBL.bat` 스크립트 실행
-6. Boot1을 Low로 설정 후, Reset 실행
+1. Connect the `STM32N6570-DK` to the PC and set Boot1 to High.
+2. Open `EWARM/Project.eww`.
+3. Build both `STM32N6570-DK_Appli` & `STM32N6570-DK_FSBL` projects.
+4. Navigate to the `Flash scripts/IAR` directory.
+5. Execute `SignAndLoad_App.bat` & `SignAndLoad_FSBL.bat` scripts.
+6. Set **Boot1** to Low and perform a Reset.
 
-# Camera
+# Camera Module
 
-**개요**
+**Overview**
 
-- **CameraThread**는 카메라 프레임 처리를 전담하는 스레드입니다.
-- **EVENT_START_CAMERA_THREAD** 이벤트가 발생하면 카메라 스레드가 시작됩니다.
-- 이후 **EVENT_FRAME_INTERUPT** 이벤트마다 카메라 프레임이 준비되었음을 의미하며,
-    - Model을 통해 Presenter에게 **카메라 갱신 요청**을 전달합니다.
-    - `swap_bitmap()`을 호출해 더블 버퍼 처리도 함께 수행합니다.
-- Presenter는 `tick()`에서 모델의 상태를 감지해 View를 갱신합니다.
+- The **CameraThread** is responsible for handling camera frame processing.
+- When the **EVENT_START_CAMERA_THREAD** event is triggered, the CameraThread is initiated.
+- For every **EVENT_FRAME_INTERRUPT** event, a new camera frame is ready:
+    - The Model notifies the Presenter to update the camera feed.
+    - `swap_bitmap()` is called to handle double-buffering.
+- The Presenter detects the model state changes in its `tick()` method and updates the View accordingly.
 
-**시퀸스 다이어그램**
+### Sequence Diagram
 
 ```mermaid
 sequenceDiagram
@@ -40,12 +40,12 @@ sequenceDiagram
     participant Presenter as Presenter::tick()
     participant View as View
 
-    Note over CameraThread: EVENT_START_CAMERA_THREAD 대기 중
+    Note over CameraThread: Waiting for EVENT_START_CAMERA_THREAD
     activate CameraThread
-    CameraThread->>CameraThread: 이벤트 수신 후 루프 진입
+    CameraThread->>CameraThread: Loop: Frame interrupt occurs
 
-    loop 프레임 인터럽트 발생
-        Note over CameraThread: EVENT_FRAME_INTERUPT 대기
+    loop Frame interrupt occurs
+        Note over CameraThread: Waiting for EVENT_FRAME_INTERUPT
         CameraThread->>Model: setCameraRefreshRequest()
         Note over Model: Refresh flag set
         CameraThread->>Model: swap_bitmap()
@@ -53,9 +53,9 @@ sequenceDiagram
 
     deactivate CameraThread
 
-    Note over Presenter: tick() 주기마다 확인
+    Note over Presenter: Check at every tick() interval.
     Presenter->>Model: isCameraRefreshNeeded()
-    alt 갱신 요청 있음 ✅
+    alt If an update request is present ✅
         Presenter->>Model: getCurrBitmap()
         Presenter->>View: swapCamBuf()
         Presenter->>Model: ProcessCameraBackground()
