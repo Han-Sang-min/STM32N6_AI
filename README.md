@@ -67,17 +67,15 @@ sequenceDiagram
 
 # AI
 
-**개요**
+**Overview**
 
-이 프로젝트에서 **AI 처리**는 별도의 스레드(`AIThread`)에서 수행됩니다.
+In this project, AI processing is performed in a dedicated thread (`AIThread`).
+After the camera captures an image, the AI thread analyzes it to obtain object-recognition results, passes those results to the `Model`, and prepares them so the `View` can display them.
+- AIThread operates on an event basis (`EVENT_AI_TRIGGER`, `EVENT_AI_CAPTURE`).
+- The AI logic calls an external C library (`ai_helper_C`).
+- The resulting ROI information is sent to the `Model`, and the `View` visualizes it with markers.
 
-카메라에서 이미지를 캡처한 후, AI 스레드는 이를 분석하여 객체 인식 결과를 얻고, 결과를 `Model`에 전달하여 화면에 표시할 수 있도록 준비합니다.
-
-- **AIThread**는 이벤트 기반으로 동작합니다 (`EVENT_AI_TRIGGER`, `EVENT_AI_CAPTURE`).
-- AI 처리 로직은 외부 C 라이브러리 (`ai_helper_C`)를 호출합니다.
-- 결과로 얻은 ROI 정보를 Model에 전달하고, View에서 이를 마커로 시각화합니다.
-
-**시퀸스 다이어그램**
+### Sequence Diagram
 
 ```mermaid
 sequenceDiagram
@@ -88,27 +86,27 @@ sequenceDiagram
     participant AIHelper as ai_helper_C (C)
     participant View as View
 
-    Note over AIThread: 대기 중 (EVENT_AI_TRIGGER)
+    Note over AIThread: Waiting (EVENT_AI_TRIGGER)
 
     activate AIThread
     AIThread->>Model: StartAiCapture()
     Model->>AIHelper: Start_Capture()
-    Note over AIThread: EVENT_AI_CAPTURE 대기
+    Note over AIThread: Waiting for EVENT_AI_CAPTURE
 
     AIThread->>Model: StartAiPostProcess()
     Model->>AIHelper: Process_AI()
     AIThread->>AIHelper: GetResult_AI()
-    AIHelper-->>AIThread: 객체 정보들 (ROI)
+    AIHelper-->>AIThread: Object information (ROI)
 
     AIThread->>Model: setAiInfo(...)
-    Note right of Model: AI 데이터 준비 플래그 설정
+    Note right of Model: Set AI data-ready flag
     AIThread->>Model: setAICoordinates(...)
 
     deactivate AIThread
 
-    Note over Presenter: tick 주기마다 확인
+    Note over Presenter: Checked every tick cycle
     Presenter->>Model: isAIDataReady()
-    alt AI 데이터 준비됨 ✅
+    alt AI data ready ✅
         Presenter->>View: clearAIMarker()
         Presenter->>Model: getAICoordinates()
         Presenter->>Model: getAiInfo()
@@ -119,11 +117,11 @@ sequenceDiagram
 
 # MVP Pattern
 
-| 구성 요소 | 담당 역할 |
+| Component | Responsibility |
 | --- | --- |
-| **Model** | 로직 처리 (AI 처리, 카메라, 데이터 핸들링 등) |
-| **Presenter** | `tick()` 같은 주기 함수에서 Model의 상태 확인 및 View에 전달 |
-| **View** | 화면 갱신 및 유저에게 보여지는 UI 처리 |
+| **Model** | Core logic (AI processing, camera control, data handling, etc.) |
+| **Presenter** | In periodic functions such as `tick()`, checks `Model` state and forwards it to the `View` |
+| **View** | Updates the screen and handles the UI shown to the user |
 
 ```mermaid
 sequenceDiagram
@@ -133,10 +131,10 @@ sequenceDiagram
     participant view as View
 
     tickFunc->>model: isCameraRefreshNeeded()
-    alt 카메라 갱신 필요✅
+    alt Camera refresh needed ✅
         tickFunc->>model: clearflagCameraRefresh()
         tickFunc->>model: isAIDataReady()
-        alt AI 데이터 준비됨✅
+        alt AI data ready ✅
             tickFunc->>view: clearAIMarker()
             tickFunc->>model: getAICoordinates(coor)
             tickFunc->>model: getAiInfo(&info)
@@ -153,7 +151,7 @@ sequenceDiagram
 
 ```
 
-# 클래스 다이어그램
+# Class Diagram
 
 ```mermaid
 ---
